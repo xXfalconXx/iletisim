@@ -15,7 +15,13 @@ use Yii;
  * @property int $id
  */
 class Iletisims extends \yii\db\ActiveRecord
-{
+{	
+	/*public $mail;
+	public $konu;
+	public $mesaj;
+	public $isim_soyisim;
+	public $id;
+	*/
     /**
      * @inheritdoc
      */
@@ -34,7 +40,7 @@ class Iletisims extends \yii\db\ActiveRecord
             [['mesaj'], 'string'],
             [['tarih'], 'safe'],
             [['id'], 'integer'],
-            [['mail', 'isim_soyisim'], 'string', 'max' => 100],
+            [['mail', 'isim_soyisim'], 'string', 'max' => 100, 'message'=>'Lütfen email adresinizi giriniz'],
             [['konu'], 'string', 'max' => 250],
             [['id'], 'unique'],
         ];
@@ -54,4 +60,20 @@ class Iletisims extends \yii\db\ActiveRecord
             'id' => 'ID',
         ];
     }
+	
+	
+	$mail=$_GET[‘mail’];
+	$konu=$_GET[‘konu’];
+	$isim_soyisim=$_GET[‘isim’];
+	$mesaj=$_GET[‘mesaj’];
+	$id=$_GET[‘id’];
+
+    Yii::$app->db->createCommand()->insert('iletisims', ['mail'=>'$mail','konu'=>'$konu','isim_soyisim'=>'$isim_soyisim','id'=>'$id','mesaj'=>'$mesaj'])->execute();
+	
+	
+	
+	
+	
+	
 }
+
