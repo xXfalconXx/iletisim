@@ -6,7 +6,7 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model kouosl\iletisim\models\Iletisims */
 /* @var $form yii\widgets\ActiveForm */
-
+?>
 
 <div class="iletisims-form">
 
@@ -31,4 +31,3 @@ use yii\widgets\ActiveForm;
     <?php ActiveForm::end(); ?>
 
 </div>
-?>
